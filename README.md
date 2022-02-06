@@ -1,6 +1,6 @@
 
 ## Preise für die nächsten 24h der Leipziger Strom Börse (neue preise werden täglich um 14:00 veröffentlicht für den nächsten Tag)
-letzte aktualisierung:06-02-2022 20:37:02
+letzte aktualisierung:06-02-2022 20:56:55
 
 | Stunde | Preis in Eur/MWh |
 |---|---|
@@ -12,7 +12,7 @@ letzte aktualisierung:06-02-2022 20:37:02
 | 5 | 20.04 | 
 | 6 | 15.91 | 
 | 7 | 14.27 | 
-| 8 | 10.08 | 
+| **8** | **10.08** | 
 | 9 | 13.8 | 
 | 10 | 21 | 
 | 11 | 60.9 | 

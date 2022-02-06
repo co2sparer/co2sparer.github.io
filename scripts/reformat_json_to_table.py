@@ -1,3 +1,4 @@
+import sys
 import json
 from datetime import datetime
 
@@ -13,8 +14,19 @@ letzte aktualisierung:""" + dt_string + """
 | Stunde | Preis in Eur/MWh |
 |---|---|
 """
+    min_val = sys.maxsize
+    min_ind = -1
     for i, datum in enumerate(data['data']):
-        site_contents += "| " + str(i) + " | " + str(datum['marketprice']) + " | \n"
+        current_val = float(datum['marketprice'])
+        if current_val < min_val:
+            min_ind = i
+            min_val = current_val
+
+    for i, datum in enumerate(data['data']):
+        if i == min_ind:
+            site_contents += "| **" + str(i) + "** | **" + str(datum['marketprice']) + "** | \n"
+        else:
+            site_contents += "| " + str(i) + " | " + str(datum['marketprice']) + " | \n"
 
     with open("README.md", "w") as f:
         f.write(site_contents)
