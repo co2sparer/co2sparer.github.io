@@ -8,7 +8,7 @@ if __name__ == '__main__':
     now = datetime.now()
     dt_string = now.strftime("%d-%m-%Y %H:%M:%S")
     site_contents = """
-## Preise für die nächsten 24h der Leipziger Strom Börse (neue preise werden täglich um 14:00 veröffentlicht für den nächsten Tag)
+## Preise der EPEX Spot ® Strombörse für die nächsten 24h (neue preise werden täglich um 14:00 veröffentlicht für den kompletten nächsten Tag)
 letzte aktualisierung:""" + dt_string + """
 
 | Stunde | Preis in Eur/MWh |
