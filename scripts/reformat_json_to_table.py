@@ -48,9 +48,9 @@ if __name__ == '__main__':
     print("ok, loaded")
     now = datetime.now()
     dt_string = now.strftime("%d.%m.%Y %H:%M")
-    dt_with_hour_string = now.strftime("%d.%m.%Y %Hh")
+    date_tomorrow = (date.today() + timedelta(days=1)).strftime("%d.%m.%Y")
     site_contents = """
-## Strompreise für die nächsten 24h, stand: """ + dt_string + """
+## Strompreise für den """ + date_tomorrow + """
 
 Niedrige Preise deuten auf viel Sonnen und Windenergieerzeugung hin, ein hoher Anteil an erneuerbaren Energien bedeuted weniger CO2 Verbrauch!
 
@@ -82,7 +82,7 @@ Niedrige Preise deuten auf viel Sonnen und Windenergieerzeugung hin, ein hoher A
         else:
             site_contents += "| " + hours + " | " + str(price) + " | \n"
 
-    plot_and_save_bar_plot(label_list, data_list, dt_with_hour_string)
+    plot_and_save_bar_plot(label_list, data_list, date_tomorrow)
     site_contents += """
 Preise der EPEX Spot ® Strombörse (neue Preise werden täglich um 14:00 veröffentlicht für den kompletten nächsten Tag).
 
