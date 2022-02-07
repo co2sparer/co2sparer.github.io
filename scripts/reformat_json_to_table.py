@@ -1,9 +1,12 @@
 import sys
 import json
 import pytz
-from datetime import datetime, timedelta
+import argparse
+from datetime import datetime, date, timedelta
 from dateutil import tz
+import time
 
+import requests
 import matplotlib.pyplot as plt
 import seaborn as sns
 
@@ -19,13 +22,33 @@ def plot_and_save_bar_plot(label_list, data_list, date_as_string):
     plt.tight_layout()
     plt.savefig("../imgs/strompreis_uebersicht.png")
 
+def request_data(base_request_url):
+    ## TODO(nik): Add correct utc to berlin local time conversion here!
+    ## looks like pandas could be convenient?
+    ## https://stackoverflow.com/questions/37614303/in-pandas-how-to-get-a-utc-timestamp-at-a-given-hour-from-a-datetime
+    ## https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html
+    tomorrows_date = date.today() + timedelta(days=1)
+    unix_time = time.mktime(tomorrows_date.timetuple()) * 1000
+    request_url = base_request_url + "?start=" + str(unix_time)
+    r = requests.get(request_url)
+    json_test = r.json()
+    with open('market_data_next_24h.json', 'w') as f:
+        json.dump(json_test, f, indent=2)
+
+
 if __name__ == '__main__':
+
+    parser = argparse.ArgumentParser(description='Performs Request, and creates github page update.')
+    parser.add_argument('base_request_url', type=str,
+                        help='base request url')
+    args = parser.parse_args()
+    request_data(args.base_request_url)
+
     data = json.load(open("market_data_next_24h.json"))
     print("ok, loaded")
     now = datetime.now()
     dt_string = now.strftime("%d.%m.%Y %H:%M")
     dt_with_hour_string = now.strftime("%d.%m.%Y %Hh")
-    # tomorrows_date = (now + timedelta(days=1)).strftime("%d.%m.%Y")
     site_contents = """
 ## Strompreise für die nächsten 24h, stand: """ + dt_string + """
 
