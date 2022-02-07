@@ -6,7 +6,8 @@ BASE_REQUEST_URL=$1
 echo "STARTED"
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 # activate local python virtual environment
-source SCRIPT_DIR/venv/bin/activate
+echo $SCRIPT_DIR/../venv/bin/activate
+source $SCRIPT_DIR/../venv/bin/activate
 
 #git clone https://github.com/co2sparer/co2sparer.github.io.git
 #git clone git@github.com:co2sparer/co2sparer.github.io.git

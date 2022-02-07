@@ -1,5 +1,5 @@
 
-## Strompreise für die nächsten 24h, stand: 07.02.2022 22:15
+## Strompreise für die nächsten 24h, stand: 07.02.2022 23:02
 
 Niedrige Preise deuten auf viel Sonnen und Windenergieerzeugung hin, ein hoher Anteil an erneuerbaren Energien bedeuted weniger CO2 Verbrauch!
 
@@ -7,13 +7,11 @@ Niedrige Preise deuten auf viel Sonnen und Windenergieerzeugung hin, ein hoher A
 
 | Stunde | Preis in Eur/MWh |
 |---|---|
-| 07.02. 22h -  23h | 123.16 | 
-| **07.02. 23h -  00h** | **102.74** | 
 | 08.02. 00h -  01h | 121.96 | 
 | 08.02. 01h -  02h | 112.08 | 
 | 08.02. 02h -  03h | 107.86 | 
 | 08.02. 03h -  04h | 104.97 | 
-| 08.02. 04h -  05h | 104.12 | 
+| **08.02. 04h -  05h** | **104.12** | 
 | 08.02. 05h -  06h | 109.32 | 
 | 08.02. 06h -  07h | 134.05 | 
 | 08.02. 07h -  08h | 128.54 | 
@@ -31,7 +29,9 @@ Niedrige Preise deuten auf viel Sonnen und Windenergieerzeugung hin, ein hoher A
 | 08.02. 19h -  20h | 199.95 | 
 | 08.02. 20h -  21h | 182.94 | 
 | 08.02. 21h -  22h | 139.82 | 
+| 08.02. 22h -  23h | 132.71 | 
+| 08.02. 23h -  00h | 123.39 | 
 
 Preise der EPEX Spot ® Strombörse (neue Preise werden täglich um 14:00 veröffentlicht für den kompletten nächsten Tag).
 
-letzte Aktualisierung:07.02.2022 22:15
+letzte Aktualisierung:07.02.2022 23:02
