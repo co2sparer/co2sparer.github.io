@@ -56,7 +56,7 @@ Niedrige Preise deuten auf viel Sonnen und Windenergieerzeugung hin, ein hoher A
 
 ![Strompreis übersicht](imgs/strompreis_uebersicht.png)
 
-| Stunde | Preis in Eur/MWh |
+| Stunde | Preis in Cent/kWh |
 |---|---|
 """
     min_val = sys.maxsize
@@ -75,6 +75,7 @@ Niedrige Preise deuten auf viel Sonnen und Windenergieerzeugung hin, ein hoher A
 
         hours = timestamp_start_cet_sec.strftime('%d.%m. %Hh') + " - " + timestamp_stop_cet_sec.strftime(' %Hh')
         price = float(datum['marketprice'])
+        price = price / 10 # conversion from Euro/MWh to Cent/kWh
         label_list.append(hours)
         data_list.append(price)
         if i == min_ind:
